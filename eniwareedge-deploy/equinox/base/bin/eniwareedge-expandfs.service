@@ -1,0 +1,12 @@
+[Unit]
+Description=EniwareEdge Filesystem Expand
+After=sysinit.target local-fs.target
+ConditionPathExists=/var/local/eniwareedge-expandfs
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/eniwareedge/expandfs.sh -v -o /var/local/eniwareedge-expandfs.saved
+ExecStartPost=/bin/rm -f /var/local/eniwareedge-expandfs
+
+[Install]
+WantedBy=basic.target

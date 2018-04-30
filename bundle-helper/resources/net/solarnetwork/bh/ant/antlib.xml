@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<antlib>
+	<typedef name="manifestreader" classname="org.eniware.bh.ant.ManifestReader"/>
+</antlib>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Example Ivy configuration that extends the ivy-aws.xml base platform with 
+	the "main" configuraiton for the JARs that go into app/main.
+	
+	Run with the -Dpkg.include.main command line argument to include app/main
+	in the generated package.
+ -->
+<ivy-module version="2.0">
+	<info organisation="EniwareNetwork" module="EniwareEdge">
+	    	<extends organisation="EniwareNetwork" module="Equinox Base" revision="[1.0,)"
+	    		location="ivy-aws.xml"/>
+    </info>
+	<configurations>
+		<conf name="main" visibility="public" description="Main Runtime"/>
+	</configurations>
+	<dependencies defaultconfmapping="main->default(runtime)">
+
+		<!-- EniwareEdge basic support (this needed for most any deployment) -->
+		<dependency org="org.eniware.common" name="org.eniware.common" rev="latest.release"/>
+		<dependency org="org.eniware.common" name="org.eniware.common.pki.bc" rev="latest.release"/>
+		<dependency org="org.eniware.common" name="org.eniware.common.web" rev="latest.release"/>
+		<dependency org="org.eniware.common" name="org.eniware.common.web.gemini" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.dao.jdbc" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.dao.jdbc.derby" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.dao.jdbc.derby.ext" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.location.ws" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.reactor.dao.jdbc" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.reactor.io.json" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.reactor.simple" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.settings.ca" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.setup.auto" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.setup.obr" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.setup.security" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.setup.web" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.system.cmdline" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.system.ssh" rev="latest.release"/>
+
+		<!-- For standard deployments, include the .setup and .bulkjsonwebpost bundles -->
+		<dependency org="org.eniware.edge" name="org.eniware.edge.upload.bulkjsonwebpost" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.setup" rev="latest.release"/>
+
+		<!-- Include S3 backup/setup support; note this requires AWS support in the base platform -->
+		<dependency org="org.eniware.edge" name="org.eniware.edge.backup.s3" rev="latest.release"/>
+		<dependency org="org.eniware.edge" name="org.eniware.edge.setup.s3" rev="latest.release"/>
+
+		<!-- For development, comment out the "standard" ones above and include .setup.developer instead
+		<dependency org="org.eniware.edge" name="org.eniware.edge.setup.developer" rev="latest.release"/>
+		-->
+
+		<!--
+		Use OS-provided RXTX. Remove this to include the EniwareNetwork RXTX bundle.
+		See https://github.com/EniwareNetwork/eniwarenetwork/wiki/Node-Using-System-RXTX
+		-->
+		<exclude artifact="org.eniware.external.org.rxtx"/>
+
+		<!-- Global excludes provided by the base system -->
+		
+		<exclude artifact="org.eniware.external.net.sf.packtag" conf="main"/>
+		<exclude artifact="org.eniware.external.net.sf.packtag.cachefix" conf="main"/>
+		<exclude artifact="org.eniware.external.org.apache.tomcat.jdbc" conf="main"/>
+		<exclude artifact="org.eniware.external.org.mortbay.jetty" conf="main"/>
+		<exclude artifact="org.eniware.external.spring-security-messaging" conf="main"/>
+		<exclude org="commons-(beanutils|codec|collections|digester|fileupload|io)" matcher="regexp" conf="main"/>
+		<exclude org="com.fasterxml.jackson.core" conf="main"/>
+		<exclude org="com.opensymphony.quartz" conf="main"/>
+		<exclude org="org.glassfish.tyrus.bundles" conf="main"/>
+		<exclude org="javax.el" conf="main"/>
+		<exclude org="javax.servlet" conf="main"/>
+		<exclude org="joda-time" conf="main"/>
+		<exclude org="net.sf.supercsv" conf="main"/>
+		<exclude org="org.apache.derby" conf="main"/>
+		<exclude org="org.apache.felix" conf="main"/>
+		<exclude org="org.apache.servicemix.bundles" conf="main"/>
+		<exclude org="org.apache.taglibs" conf="main"/>
+		<exclude org="org.apache.tomcat" conf="main"/>
+		<exclude org="org.bouncycastle" conf="main"/>
+		<exclude org="org.codehaus.jackson" conf="main"/>
+		<exclude org="org.eclipse.gemini" conf="main"/>
+		<exclude org="org.eclipse.gemini.blueprint" conf="main"/>
+		<exclude org="org.eclipse.virgo.mirrored" conf="main"/>
+		<exclude org="org.eclipse.virgo.web" conf="main"/>
+		<exclude org="org.osgi" conf="main"/>
+		<exclude org="org.quartz-scheduler" conf="main"/>
+		<exclude org="org.slf4j" conf="main"/>
+		<exclude org="org.springframework" conf="main"/>
+		<exclude org="org.springframework.security" conf="main"/>
+		
+	</dependencies>
+</ivy-module>

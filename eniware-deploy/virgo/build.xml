@@ -1,0 +1,102 @@
+<project basedir="." xmlns:ivy="antlib:org.apache.ivy.ant" >
+
+	<property file="${basedir}/build.properties"/>
+	
+	<!-- Use build.properties to define the following comma-delimited lists: -->
+	<property name="plans" value=""/>
+	
+	<property name="dir.src.base" value="${basedir}/../../.."/>
+	<property name="dir.src.plans" value="${basedir}/plans"/>
+
+	<property name="dir.build" value="${basedir}/build"/>
+	<property name="dir.build.lib" value="${dir.src.base}/eniware-build/eniware-osgi-lib"/>
+	<property name="dir.assemble" value="${dir.build}/assemble"/>
+	
+	<property name="dir.virgo.repo" value="${dir.assemble}/repository/usr"/>
+	<property name="dir.virgo.repo.plans" value="${dir.assemble}/repository/local"/>
+	<property name="dir.virgo.pickup" value="${dir.assemble}/pickup"/>
+
+	<property name="ivy.xml" value="ivy.xml"/>
+	<property name="ivy.conf" value="runtime"/>
+	<property name="ivy.settings" value="${dir.build.lib}/ivysettings.xml"/>
+	<property name="ivy.resolve.refresh" value="false"/>
+	<property name="ivy.cache.ttl.default" value="1d"/>
+	<property name="eniware.archive.url" 
+		value="https://data.eniware.net/archive/repository/eniware"/>
+	
+	<fileset id="plan.set" dir="${dir.src.plans}" includes="*">
+		<scriptselector language="javascript">
+			var regexp = "\\b" +file.getName().replace(".","\\.") +"\\b";
+			var result = (project.getProperty("plans").search(regexp) !== -1);
+			if ( result ) {
+				java.lang.System.out.println("Including plan " +file.getName());
+			}
+			self.setSelected(result);
+		</scriptselector>
+	</fileset>
+	
+	<fileset id="plan.pickup.set" dir="${dir.src.plans}" includes="*">
+		<scriptselector language="javascript">
+			var regexp = "\\b" +file.getName().replace(".","\\.") +"\\b";
+			var result = (project.getProperty("plans-pickup").search(regexp) !== -1);
+			if ( result ) {
+				java.lang.System.out.println("Including pickup plan " +file.getName());
+			}
+			self.setSelected(result);
+		</scriptselector>
+	</fileset>
+	
+	<target name="ivy-init">
+		<taskdef resource="org/apache/ivy/ant/antlib.xml"
+			uri="antlib:org.apache.ivy.ant"
+			classpath="${dir.build.lib}/lib/ivy-2.3.0.jar"/>
+	</target>
+	
+	<target name="clean" description="Remove generated build files">
+		<delete dir="${dir.build}" failonerror="no"/>
+	</target>
+	
+	<target name="prepare">
+		<mkdir dir="${dir.assemble}"/>
+		<mkdir dir="${dir.virgo.repo}"/>
+		<mkdir dir="${dir.virgo.repo.plans}"/>
+		<mkdir dir="${dir.virgo.pickup}"/>
+	</target>
+	
+	<target name="external-jars" depends="ivy-init">
+		<ivy:settings file="${ivy.settings}"/>
+		<ivy:resolve file="${ivy.xml}" conf="${ivy.conf}"/>
+		<mkdir dir="${dir.build}/jars"/>
+		<ivy:retrieve type="jar,bundle" pattern="${dir.build}/jars/[artifact]-[revision].[ext]"/>
+	</target>
+	
+	<target name="plans" if="plans" depends="prepare">
+		<copy todir="${dir.virgo.repo.plans}">
+			<fileset refid="plan.set"/>
+		</copy>
+	</target>
+	
+	<target name="plans-pickup" if="plans-pickup" depends="prepare">
+		<copy todir="${dir.virgo.pickup}">
+			<fileset refid="plan.pickup.set"/>
+		</copy>
+	</target>
+	
+	<target name="assemble" depends="external-jars,plans,plans-pickup" description="Assemble jars">
+		<!-- Also copy all dependent Eniware JARs into assembly dir -->
+		<copy todir="${dir.virgo.repo}">
+			<fileset dir="${dir.build}/jars" includes="*.jar"/>
+		</copy>
+		
+	</target>
+
+	<target name="archive" depends="assemble"
+		description="Assemble and then package a EniwareNet Virgo bundle archive">
+		<tar destfile="${dir.build}/net-virgo-bundles.tgz" compression="gzip" longfile="gnu">
+			<tarfileset dir="${dir.assemble}">
+				<include name="**"/>
+			</tarfileset>
+		</tar>
+	</target>
+	
+</project>

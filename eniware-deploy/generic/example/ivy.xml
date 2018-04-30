@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0">
+	<info organisation="EniwareNetwork" module="EniwareNet"/>
+	<configurations>
+		<conf name="runtime" visibility="public" description="The Runtime"/>
+	</configurations>
+	<dependencies defaultconfmapping="runtime->default(runtime)">
+		
+		<dependency org="org.eniware.common" name="org.eniware.common" rev="latest.release"/>
+		<dependency org="org.eniware.common" name="org.eniware.common.pidfile" rev="latest.release"/>
+		<dependency org="org.eniware.common" name="org.eniware.common.pki.bc" rev="latest.release"/>
+		<dependency org="org.eniware.common" name="org.eniware.common.web" rev="latest.release"/>
+		<dependency org="org.eniware.common" name="org.eniware.common.web.gemini" rev="latest.release"/>
+
+		<dependency org="org.eniware.central" name="org.eniware.central.common" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.common.dao.jdbc" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.common.dao.mybatis" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.common.mail" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.common.mail.javamail" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.common.security" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.common.security.web" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.common.web" rev="latest.release"/>
+		
+		<dependency org="org.eniware.central" name="org.eniware.central.datum" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.datum.agg" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.datum.aop" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.datum.biz.dao" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.datum.dao.mybatis" rev="latest.release"/>
+
+		<dependency org="org.eniware.central" name="org.eniware.central.in.biz" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.in.biz.dao" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.in.web" rev="latest.release"/>
+
+		<dependency org="org.eniware.central" name="org.eniware.central.instructor" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.instructor.aop" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.instructor.biz.dao" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.instructor.dao.mybatis" rev="latest.release"/>
+
+		<dependency org="org.eniware.central" name="org.eniware.central.query" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.query.aop" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.query.biz.dao" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.query.web" rev="latest.release"/>
+
+		<dependency org="org.eniware.central" name="org.eniware.central.scheduler.quartz" rev="latest.release"/>
+		
+		<dependency org="org.eniware.central" name="org.eniware.central.user" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.user.aop" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.user.biz.dao" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.user.dao.mybatis" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.user.pki.dogtag" rev="latest.release"/>
+		<dependency org="org.eniware.central" name="org.eniware.central.user.web" rev="latest.release"/>
+
+		<dependency org="org.eniware.central" name="org.eniware.central.viz.web" rev="latest.release"/>
+		
+		<dependency org="org.eniware.external" name="org.eniware.external.net.sf.packtag" rev="latest.release"/>
+		<dependency org="org.eniware.external" name="org.eniware.external.org.apache.taglibs.response" rev="latest.release"/>
+		<dependency org="org.eniware.external" name="org.eniware.external.org.joda.jsptags" rev="latest.release"/>
+		<dependency org="org.eniware.external" name="org.eniware.external.org.mortbay.jetty" rev="latest.release"/>
+		<dependency org="org.eniware.external" name="org.eniware.external.org.postgresql" rev="latest.release"/>
+		<dependency org="org.eniware.external" name="org.eniware.external.org.postgresql.jdbc4" rev="latest.release"/>
+		<dependency org="org.eniware.external" name="org.eniware.external.org.tuckey.urlrewritefilter" rev="latest.release"/>
+
+		<!-- Global excludes provided by the base system -->
+		<exclude org="commons-(beanutils|codec|collections|digester|fileupload|io)" matcher="regexp"/>
+		<exclude org="com.fasterxml.jackson.core"/>
+		<exclude org="com.opensymphony.quartz"/>
+		<exclude org="javax.el"/>
+		<exclude org="javax.servlet"/>
+		<exclude org="javax.validation"/>
+		<exclude org="joda-time"/>
+		<exclude org="net.sf.ehcache"/>
+		<exclude org="net.sf.supercsv"/>
+		<exclude module="org.eniware.external.org.apache.tomcat.jdbc"/>
+		<exclude org="org.aopalliance"/>
+		<exclude org="org.apache.derby"/>
+		<exclude org="org.apache.felix"/>
+		<exclude org="org.apache.httpcomponents"/>
+		<exclude org="org.apache.servicemix.bundles"/>
+		<exclude org="org.apache.taglibs"/>
+		<exclude org="org.apache.tomcat"/>
+		<exclude org="org.aspectj"/>
+		<exclude org="org.bouncycastle"/>
+		<exclude org="org.codehaus.jackson"/>
+		<exclude org="org.eclipse.gemini"/>
+		<exclude org="org.joda"/>
+		<exclude org="org.hibernate"/>
+		<exclude org="org.mybatis"/>
+		<exclude org="org.osgi"/>
+		<exclude org="org.slf4j"/>
+		<exclude org="org.springframework"/>
+		<exclude org="org.springframework.security"/>
+	
+	</dependencies>
+</ivy-module>

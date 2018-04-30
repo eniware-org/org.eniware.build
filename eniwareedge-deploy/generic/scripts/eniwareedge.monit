@@ -1,0 +1,7 @@
+# Monit script to monitor EniwareEdge 
+# 
+# Change the "pidfile" path to match your system.
+
+check process eniwareedge with pidfile /dev/shm/eniware/eniwareedge.pid
+	start = "/etc/init.d/eniwareedge start"
+	stop  = "/etc/init.d/eniwareedge stop"

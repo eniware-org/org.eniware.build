@@ -1,0 +1,6 @@
+eniware ALL = (root) NOPASSWD: /bin/systemctl status systemd-networkd, \
+	/bin/systemctl restart systemd-networkd, \
+	/bin/systemctl restart eniwareedge, \
+	/sbin/reboot, \
+	/bin/systemctl start eniwaressh@*, \
+	/bin/systemctl stop eniwaressh@*

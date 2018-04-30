@@ -1,0 +1,7 @@
+/build.properties
+.vagrant
+reports/
+eniwareedge/
+var/
+derby.log
+/ivysettings-local.xml
