@@ -19,64 +19,64 @@ done
 
 shift $(($OPTIND - 1))
 
-ENIWARENODE_PART=`lsblk -npo kname,label |grep -i ENIWARENODE |cut -d' ' -f 1`
+ENIWAREEdge_PART=`lsblk -npo kname,label |grep -i ENIWAREEdge |cut -d' ' -f 1`
 
-if [ -z "$ENIWARENODE_PART" ]; then
-	echo "Error: ENIWARENODE partition not discovered"
+if [ -z "$ENIWAREEdge_PART" ]; then
+	echo "Error: ENIWAREEdge partition not discovered"
 	exit 1
 elif [ $VERBOSE = 1 ]; then
-	echo "Discovered ENIWARENODE partition ${ENIWARENODE_PART}..."
+	echo "Discovered ENIWAREEdge partition ${ENIWAREEdge_PART}..."
 fi
 
-# get the device and partition number with the ENIWARENODE label
-ENIWARENODE_DEV=
-ENIWARENODE_PART_NUM=
+# get the device and partition number with the ENIWAREEdge label
+ENIWAREEdge_DEV=
+ENIWAREEdge_PART_NUM=
 MMC_REGEX='(.*[0-9]+)p([0-9]+)'
 SD_REGEX='(.*)([0-9]+)'
-if [[ $ENIWARENODE_PART =~ $MMC_REGEX ]]; then
-	ENIWARENODE_DEV=${BASH_REMATCH[1]}
-	ENIWARENODE_PART_NUM=${BASH_REMATCH[2]}
-elif [[ $ENIWARENODE_PART =~ $SD_REGEX ]]; then
-	ENIWARENODE_DEV=${BASH_REMATCH[1]}
-	ENIWARENODE_PART_NUM=${BASH_REMATCH[2]}
+if [[ $ENIWAREEdge_PART =~ $MMC_REGEX ]]; then
+	ENIWAREEdge_DEV=${BASH_REMATCH[1]}
+	ENIWAREEdge_PART_NUM=${BASH_REMATCH[2]}
+elif [[ $ENIWAREEdge_PART =~ $SD_REGEX ]]; then
+	ENIWAREEdge_DEV=${BASH_REMATCH[1]}
+	ENIWAREEdge_PART_NUM=${BASH_REMATCH[2]}
 fi
-if [ -z "$ENIWARENODE_DEV" ]; then
-	echo "Error: ENIWARENODE device not discovered"
+if [ -z "$ENIWAREEdge_DEV" ]; then
+	echo "Error: ENIWAREEdge device not discovered"
 	exit 1
 fi
-if [ -z "$ENIWARENODE_PART_NUM" ]; then
-	echo "Error: ENIWARENODE partition number not discovered"
+if [ -z "$ENIWAREEdge_PART_NUM" ]; then
+	echo "Error: ENIWAREEdge partition number not discovered"
 	exit 1
 fi
 
 if [ $VERBOSE = 1 ]; then
-	echo "Expanding ${ENIWARENODE_DEV} partition ${ENIWARENODE_PART_NUM}"
+	echo "Expanding ${ENIWAREEdge_DEV} partition ${ENIWAREEdge_PART_NUM}"
 	echo "Saving recovery output to ${OLD_GEOM_FILE}..."
 fi
 if [ $DRYRUN = 1 ]; then
-	echo ',+' |sfdisk ${ENIWARENODE_DEV} -N${ENIWARENODE_PART_NUM} --no-reread \
+	echo ',+' |sfdisk ${ENIWAREEdge_DEV} -N${ENIWAREEdge_PART_NUM} --no-reread \
 		-f -uS -q -n 2>/dev/null
 else
-	echo ',+' |sfdisk ${ENIWARENODE_DEV} -N${ENIWARENODE_PART_NUM} --no-reread \
+	echo ',+' |sfdisk ${ENIWAREEdge_DEV} -N${ENIWAREEdge_PART_NUM} --no-reread \
 		-f -uS -q -O "${OLD_GEOM_FILE}" 2>/dev/null
 fi
 
 # Inform the kernel of the partition change
 if [ $VERBOSE = 1 ]; then
-	echo -e "\nReloading partition table for ${ENIWARENODE_DEV}..."
+	echo -e "\nReloading partition table for ${ENIWAREEdge_DEV}..."
 fi
 if [ $DRYRUN = 1 ]; then
-	echo "partx -u ${ENIWARENODE_DEV}"
+	echo "partx -u ${ENIWAREEdge_DEV}"
 else
-	partx -u ${ENIWARENODE_DEV}
+	partx -u ${ENIWAREEdge_DEV}
 fi
 
 # Resize the filesystem to use the entire partition
 if [ $VERBOSE = 1 ]; then
-	echo -e "\nExpanding filesystem on partition ${ENIWARENODE_PART}..."
+	echo -e "\nExpanding filesystem on partition ${ENIWAREEdge_PART}..."
 fi
 if [ $DRYRUN = 1 ]; then
-	echo "resize2fs ${ENIWARENODE_PART}"
+	echo "resize2fs ${ENIWAREEdge_PART}"
 else
-	resize2fs "${ENIWARENODE_PART}"
+	resize2fs "${ENIWAREEdge_PART}"
 fi

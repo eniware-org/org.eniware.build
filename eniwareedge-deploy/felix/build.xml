@@ -168,13 +168,13 @@
 	</target>
 	
 	<target name="assemble" depends="assemble-base,app-boot,app-core,felix-config"
-		description="Assemble a base node directory structure"/>
+		description="Assemble a base Edge directory structure"/>
 	
 	<!-- Attempt to use native tar, to honor symlinks -->
 	<target name="archive.native" depends="assemble">
 		<exec executable="tar" failonerror="no" resultproperty="archive.native.failed">
 			<arg value="-czf"/>
-			<arg value="${dir.build}/base-${osgi.jar.link}-node.tgz"/>
+			<arg value="${dir.build}/base-${osgi.jar.link}-Edge.tgz"/>
 			<arg value="-C"/>
 			<arg value="${dir.assemble}"/>
 			<arg value="app"/>
@@ -187,7 +187,7 @@
 	
 	<!-- Fall back to tar Ant task if native tar failed -->
 	<target name="archive.ant" depends="assemble" if:true="${archive.native.failed}">
-		<tar destfile="${dir.build}/base-${osgi.jar.link}-node.tgz" compression="gzip" longfile="gnu">
+		<tar destfile="${dir.build}/base-${osgi.jar.link}-Edge.tgz" compression="gzip" longfile="gnu">
 			<tarfileset dir="${dir.assemble}">
 				<include name="**"/>
 				<exclude name="bin/*.sh"/>
@@ -199,7 +199,7 @@
 	</target>
 	
 	<target name="archive" depends="assemble,archive.native,archive.ant"
-		description="Assemble and then package a base node archive"/>
+		description="Assemble and then package a base Edge archive"/>
 	
 	<macrodef name="felix-config-generate">
 		<attribute name="filesetId"/>

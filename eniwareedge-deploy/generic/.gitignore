@@ -2,6 +2,6 @@
 /ivy*.xml
 /platform
 /target
-/*node-bundles*
+/*Edge-bundles*
 /build
 /tmp/

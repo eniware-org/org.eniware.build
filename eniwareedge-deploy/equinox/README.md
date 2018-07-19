@@ -27,14 +27,14 @@ To build the platform, run the **archive** task:
 
 	ant archive
 	
-This will produce a platform tarball at `build/base-equinox-node.tgz`. To
+This will produce a platform tarball at `build/base-equinox-Edge.tgz`. To
 rebuild always from scratch, add the **clean** task:
 
 	ant clean archive
 
-## Upgrading nodes
+## Upgrading Edges
 
-To upgrade an existing node with a new platform version, follow the process
+To upgrade an existing Edge with a new platform version, follow the process
 outlined [on the EniwareNetwork wiki][upgrade].
 
  

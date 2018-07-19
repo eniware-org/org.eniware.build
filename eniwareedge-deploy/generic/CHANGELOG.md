@@ -12,7 +12,7 @@ Platform.
 **Note** This release requires a minimum of the **20170628** EniwareEdge
 Platform.
 
- * View captured datum values directly on the node web GUI, in real time.
+ * View captured datum values directly on the Edge web GUI, in real time.
  * New "Upgrade All" feature on web GUI Plugin screen.
  * Better handling of plugin updates by automatically restarting after
    upgrade.

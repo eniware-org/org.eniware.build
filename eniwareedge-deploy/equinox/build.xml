@@ -208,13 +208,13 @@
 	</target>
 	
 	<target name="assemble" depends="assemble-base,app-boot,app-core,app-main,equinox-config,assemble-perms"
-		description="Assemble a base node directory structure"/>
+		description="Assemble a base Edge directory structure"/>
 	
 	<!-- Attempt to use native tar, to honor symlinks -->
 	<target name="archive.native">
 		<exec executable="tar" failonerror="no" resultproperty="tar.native.failed">
 			<arg value="-cf"/>
-			<arg value="${dir.build}/base-equinox-node.${pkg.tar.ext}"/>
+			<arg value="${dir.build}/base-equinox-Edge.${pkg.tar.ext}"/>
 			<arg line="${pkg.tar.compress}"/>
 			<arg value="-C"/>
 			<arg value="${dir.assemble}"/>
@@ -233,7 +233,7 @@
 	
 	<!-- Fall back to tar Ant task if native tar failed -->
 	<target name="archive.ant" depends="assemble" if="archive.native.failed">
-		<tar destfile="${dir.build}/base-equinox-node.tgz" compression="gzip" longfile="gnu">
+		<tar destfile="${dir.build}/base-equinox-Edge.tgz" compression="gzip" longfile="gnu">
 			<tarfileset dir="${dir.assemble}">
 				<include name="**"/>
 				<exclude name="bin/*.sh"/>
@@ -249,7 +249,7 @@
 	</target>
 	
 	<target name="archive" depends="assemble,archive.native,archive.ant"
-		description="Assemble and then package a base node archive"/>
+		description="Assemble and then package a base Edge archive"/>
 	
 	<macrodef name="equinox-config-generate">
 		<attribute name="filesetId"/>

@@ -20,7 +20,7 @@
 		<include name="eniwarenetwork-common/*.test/build.xml"/>
 		<include name="eniwarenetwork-external/*.test/build.xml"/>
 		<include name="eniwarenetwork-loxone/*.test/build.xml"/>
-		<include name="eniwarenetwork-node/*.test/build.xml"/>
+		<include name="eniwarenetwork-Edge/*.test/build.xml"/>
 		<include name="eniwarenetwork-central/*.test/build.xml"/>
 	</patternset>
 	
@@ -28,13 +28,13 @@
 		<include name="eniwarenetwork-common/*/src"/>
 		<include name="eniwarenetwork-external/*/src"/>
 		<include name="eniwarenetwork-loxone/*/src"/>
-		<include name="eniwarenetwork-node/*/src"/>
+		<include name="eniwarenetwork-Edge/*/src"/>
 		<include name="eniwarenetwork-central/*/src"/>
 
 		<exclude name="eniwarenetwork-common/*.test/src"/>
 		<exclude name="eniwarenetwork-external/*.test/src"/>
 		<exclude name="eniwarenetwork-loxone/*.test/src"/>
-		<exclude name="eniwarenetwork-node/*.test/src"/>
+		<exclude name="eniwarenetwork-Edge/*.test/src"/>
 		<exclude name="eniwarenetwork-central/*.test/src"/>
 	</patternset>
 	
@@ -42,7 +42,7 @@
 		<include name="eniwarenetwork-common/*.test/build/ant/deps/*.jar"/>
 		<include name="eniwarenetwork-external/*.test/build/ant/deps/*.jar"/>
 		<include name="eniwarenetwork-loxone/*.test/build/ant/deps/*.jar"/>
-		<include name="eniwarenetwork-node/*.test/build/ant/deps/*.jar"/>
+		<include name="eniwarenetwork-Edge/*.test/build/ant/deps/*.jar"/>
 		<include name="eniwarenetwork-central/*.test/build/ant/deps/*.jar"/>
 	</patternset>
 	

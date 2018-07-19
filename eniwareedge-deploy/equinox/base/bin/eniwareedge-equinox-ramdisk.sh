@@ -37,10 +37,10 @@
 #
 #
 # Set PID_FILE to the path to the same path as specified in 
-# eniwareedge.properties for the node.pidfile setting.
+# eniwareedge.properties for the Edge.pidfile setting.
 # 
 # Set RUNAS to the name of the user to run the process as. The script
-# will use "su" to run the node as this user, in the background.
+# will use "su" to run the Edge as this user, in the background.
 # 
 # The application is expected to be configured such that the main
 # database and log files are stored in an OS-configured RAM disk,

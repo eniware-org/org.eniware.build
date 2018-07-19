@@ -44,8 +44,8 @@
 	</target>
 
 	<target name="archive" depends="assemble"
-		description="Assemble and then package a node bundle archive">
-		<tar destfile="${dir.build}/node-bundles.tgz" compression="gzip" longfile="gnu">
+		description="Assemble and then package a Edge bundle archive">
+		<tar destfile="${dir.build}/Edge-bundles.tgz" compression="gzip" longfile="gnu">
 			<tarfileset dir="${dir.assemble}">
 				<include name="**/*.*"/>
 			</tarfileset>

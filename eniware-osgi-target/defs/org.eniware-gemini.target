@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.8"?><target name="Eniware Gemini" sequenceNumber="515">
+<?pde version="3.8"?><target name="Eniware Gemini" sequenceNumber="525">
 <locations>
-<location path="${workspace_loc:/eniware-osgi-target/support}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/gemini-web/dep}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/gemini-blueprint}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/gemini-web}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/spring}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/platform}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/cxf}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/source}" type="Directory"/>
-<location path="${workspace_loc:/eniware-osgi-target/unit-test}" type="Directory"/>
 <location path="${workspace_loc:/eniware-osgi-target/virgo}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/unit-test}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/support}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/spring}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/source}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/platform}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/gemini-web/dep}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/gemini-web}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/gemini-blueprint}" type="Directory"/>
+<location path="${workspace_loc:/eniware-osgi-target/cxf}" type="Directory"/>
 </locations>
 <includeBundles>
 <plugin id="bcpkix"/>

@@ -10,7 +10,7 @@
 	<property name="dir.platform" value="${basedir}/../../../eniware-osgi-target"/>
 	<import file="${dir.target}/lib-build.xml"/>
 	
-	<patternset id="base.node.app.main">
+	<patternset id="base.Edge.app.main">
 		<include name="*.jar"/>
 		<exclude name="aopalliance*"/>
 		<exclude name="com.springsource.org.apache.commons.*"/>
@@ -40,7 +40,7 @@
 		<mkdir dir="${dir.assemble}/app/main"/>
 		<copy todir="${dir.assemble}/app/main" flatten="yes">
 			<fileset dir="${dir.build}/jars">
-				<patternset refid="base.node.app.main"/>
+				<patternset refid="base.Edge.app.main"/>
 			</fileset>
 			<fileset dir="${dir.platform}">
 				<patternset refid="spring.osgi"/>
@@ -82,11 +82,11 @@
 	</target>
 	
 	<target name="assemble" depends="app-boot,app-main,app-conf,app-logging,felix"
-		description="Assemble a base node directory structure"/>
+		description="Assemble a base Edge directory structure"/>
 	
 	<target name="archive" depends="assemble"
-		description="Assemble and then package a base node archive">
-		<tar destfile="${dir.build}/base-node.tgz" compression="gzip">
+		description="Assemble and then package a base Edge archive">
+		<tar destfile="${dir.build}/base-Edge.tgz" compression="gzip">
 			<tarfileset dir="${dir.assemble}">
 				<include name="**"/>
 			</tarfileset>

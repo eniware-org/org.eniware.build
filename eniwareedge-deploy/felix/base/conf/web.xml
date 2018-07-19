@@ -661,7 +661,7 @@
     </mime-mapping>
     <mime-mapping>
         <extension>anx</extension>
-        <mime-type>application/annodex</mime-type>
+        <mime-type>application/anEdgex</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>apk</extension>
@@ -745,11 +745,11 @@
     </mime-mapping>
     <mime-mapping>
         <extension>axa</extension>
-        <mime-type>audio/annodex</mime-type>
+        <mime-type>audio/anEdgex</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>axv</extension>
-        <mime-type>video/annodex</mime-type>
+        <mime-type>video/anEdgex</mime-type>
     </mime-mapping>
     <mime-mapping>
         <extension>azf</extension>

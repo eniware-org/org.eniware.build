@@ -22,7 +22,7 @@ To build the application, run the **archive** task:
 
 	ant archive
 	
-This will produce a platform tarball at `build/node-bundles.tgz`. To
+This will produce a platform tarball at `build/Edge-bundles.tgz`. To
 rebuild always from scratch, add the **clean** task:
 
 	ant clean archive
@@ -33,9 +33,9 @@ to maintain a package with all the bundles required you could create a
 
 	ant -Divy.file=ivy-mycompany.xml clean archive
 
-## Upgrading nodes
+## Upgrading Edges
 
-To upgrade an existing node with a new application version, [follow the process
+To upgrade an existing Edge with a new application version, [follow the process
 outlined on the EniwareNetwork wiki][upgrade].
 
  

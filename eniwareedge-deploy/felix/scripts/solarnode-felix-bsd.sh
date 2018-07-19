@@ -45,10 +45,10 @@
 #
 #
 # Set PID_FILE to the path to the same path as specified in 
-# eniwareedge.properties for the node.pidfile setting.
+# eniwareedge.properties for the Edge.pidfile setting.
 # 
 # Set RUNAS to the name of the user to run the process as. The script
-# will use "su" to run the node as this user, in the background.
+# will use "su" to run the Edge as this user, in the background.
 # 
 # Modify the APP_ARGS and JVM_ARGS variables as necessary.
 

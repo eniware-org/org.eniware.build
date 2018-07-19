@@ -45,10 +45,10 @@
 #
 #
 # Set PID_FILE to the path to the same path as specified in 
-# eniwareedge.properties for the node.pidfile setting.
+# eniwareedge.properties for the Edge.pidfile setting.
 # 
 # Set RUNAS to the name of the user to run the process as. The script
-# will use "su" to run the node as this user, in the background.
+# will use "su" to run the Edge as this user, in the background.
 # 
 # The application is expected to be configured such that the main
 # database and log files are stored in an OS-configured RAM disk,
@@ -110,7 +110,7 @@ stop_proc () {
 
 # function to start up process
 do_start () {
-	echo -n "Starting Eniware Node server... "
+	echo -n "Starting Eniware Edge server... "
 	# Verify ram dir exists; create if necessary
 	setup_dir ${RAM_DIR}
 	
@@ -136,7 +136,7 @@ do_start () {
 	if [ -e $PID_FILE ]; then
 		echo "Running as PID" `cat $PID_FILE`
 	else
-		echo "Eniware Node does not appear to be running."
+		echo "Eniware Edge does not appear to be running."
 	fi
 }
 
@@ -149,7 +149,7 @@ do_stop () {
 		run=`ps -o pid= -p $pid`
 	fi
 	if [ -n "$run" ]; then
-		echo -n "Stopping Eniware Node $pid... "
+		echo -n "Stopping Eniware Edge $pid... "
 		stop_proc $pid $STOP_TRIES
 		run=`ps -o pid= -p $pid`
 		
@@ -161,7 +161,7 @@ do_stop () {
 		fi
 		echo "done."
 	else
-		echo "Eniware Node does not appear to be running."
+		echo "Eniware Edge does not appear to be running."
 	fi
 }
 
@@ -174,9 +174,9 @@ do_status () {
 		run=`ps -o pid= -p $pid`
 	fi
 	if [ -n "$run" ]; then
-		echo "Eniware Node is running (PID $pid)"
+		echo "Eniware Edge is running (PID $pid)"
 	else
-		echo "Eniware Node does not appear to be running."
+		echo "Eniware Edge does not appear to be running."
 	fi
 }
 

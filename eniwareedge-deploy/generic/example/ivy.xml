@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 	This is an example EniwareEdge deployment configuration. It defines a basic set of
-	bundles required to run the EniwareEdge web GUI and allow the node to associate with
+	bundles required to run the EniwareEdge web GUI and allow the Edge to associate with
 	EniwareNetwork. To perform anything useful like collect data from devices, additional
 	dependencies should be added.
 
@@ -54,7 +54,7 @@
 
 		<!--
 		Use OS-provided RXTX. Remove this to include the EniwareNetwork RXTX bundle.
-		See https://github.com/EniwareNetwork/eniwarenetwork/wiki/Node-Using-System-RXTX
+		See https://github.com/EniwareNetwork/eniwarenetwork/wiki/Edge-Using-System-RXTX
 		-->
 		<exclude artifact="org.eniware.external.org.rxtx"/>
 
