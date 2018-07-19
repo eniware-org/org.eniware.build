@@ -30,7 +30,7 @@
 	<property name="compile.source" value="1.6" />
 	<property name="compile.target" value="1.6" />
 	<property name="eniwarenetwork.archive.url" 
-		value="https://data.network.eniware.org/archive/repository/eniwarenetwork"/>
+		value="https://data.network.eniware.org//archive/repository/eniwarenetwork"/>
 	<property name="publish.dest" value="eniwarenetwork"/>
 	<property name="publish.ivy" value="true"/>
 	
