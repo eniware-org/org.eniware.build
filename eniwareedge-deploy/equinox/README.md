@@ -27,7 +27,7 @@ To build the platform, run the **archive** task:
 
 	ant archive
 	
-This will produce a platform tarball at `build/base-equinox-Edge.tgz`. To
+This will produce a platform tar ball at `build/base-equinox-Edge.tgz`. To
 rebuild always from scratch, add the **clean** task:
 
 	ant clean archive
