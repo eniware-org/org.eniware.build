@@ -1,5 +1,5 @@
 /* ==================================================================
- *  Eniware Open sorce:Nikolai Manchev
+ *  Eniware Open Source:Nikolai Manchev
  *  Apache License 2.0
  * ==================================================================
  */
@@ -50,7 +50,7 @@ import org.springframework.stereotype.Service;
  * {@code appserver.base} System property, which is normally set by the Archiva
  * start up script.
  * 
- * @author matt
+ * @Nikolai Manchev
  * @version 0.2
  */
 @Service("knownRepositoryContentConsumer#create-obr-metadata")
