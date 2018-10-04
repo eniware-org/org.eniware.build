@@ -1,5 +1,5 @@
 <project basedir="." default="go" name="Eniware BundleHelper"
-	xmlns:bh="antlib:net.eniware.bh.ant">
+	xmlns:bh="antlib:org.eniware.bh.ant">
 	
 	<target name="go" depends="go.simple,go.bcp"/>
 	
@@ -11,8 +11,8 @@
 	</target>
 	
 	<target name="init" depends="jar">
-		<taskdef resource="net/eniware/bh/ant/antlib.xml"
-			uri="antlib:net.eniware.bh.ant"
+		<taskdef resource="org/eniware/bh/ant/antlib.xml"
+			uri="antlib:org.eniware.bh.ant"
 			classpath="bh.jar"/>
 	</target>
 	

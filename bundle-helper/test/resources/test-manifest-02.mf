@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: BundleHelper Test Manifest
-Bundle-SymbolicName: org.eniware.bh
-Bundle-Version: 1.0.0
-Bundle-Vendor: Eniware
-Bundle-ClassPath: .,bar.txt
