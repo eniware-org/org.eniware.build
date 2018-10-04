@@ -9,7 +9,7 @@
 	<property name="dir.src.plans" value="${basedir}/plans"/>
 
 	<property name="dir.build" value="${basedir}/build"/>
-	<property name="dir.build.lib" value="${dir.src.base}/org.eniware.build1/eniware-osgi-lib"/>
+	<property name="dir.build.lib" value="${dir.src.base}/org.eniware.build/eniware-osgi-lib"/>
 	<property name="dir.assemble" value="${dir.build}/assemble"/>
 	
 	<property name="dir.virgo.repo" value="${dir.assemble}/repository/usr"/>

@@ -3,7 +3,7 @@
 	<property file="${basedir}/build.properties"/>
 	
 	<property name="dir.src.base" value="${basedir}/../../.."/>
-	<property name="dir.build.lib" value="${dir.src.base}/org.eniware.build1/eniware-osgi-lib"/>
+	<property name="dir.build.lib" value="${dir.src.base}/org.eniware.build/eniware-osgi-lib"/>
 	<property name="dir.build" value="${basedir}/build"/>
 	<property name="dir.assemble" value="${dir.build}/assemble"/>
 	<property name="dir.jars" value="${dir.build}/jars"/>
