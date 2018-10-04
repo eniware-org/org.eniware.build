@@ -12,7 +12,7 @@
 	<property name="ivy.resolve.refresh" value="false"/>
 	<property name="ivy.cache.ttl.default" value="1d"/>
 	<property name="eniware.archive.url" 
-		value="https://data.eniware.net/archive/repository/eniware"/>
+		value="https://data.eniware.org/archive/repository/eniware"/>
 
 	<target name="ivy-init">
 		<taskdef resource="org/apache/ivy/ant/antlib.xml"
