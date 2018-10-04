@@ -192,7 +192,7 @@
 	</target>
 	
 	<target name="bh.init">
-		<taskdef resource="net/eniwarenetwork/bh/ant/antlib.xml"
+		<taskdef resource="org/eniwarenetwork/bh/ant/antlib.xml"
 					uri="antlib:org.eniware.bh.ant"
 					classpath="${dir.target}/lib/bh-1.1.jar"/>
 	</target>
