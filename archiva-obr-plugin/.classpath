@@ -7,7 +7,5 @@
 	<classpathentry kind="lib" path="/eniware-osgi-target/source/org.apache.felix.fileinstall-sources-3.1.10.jar"/>
 	<classpathentry kind="lib" path="/eniware-osgi-target/platform/org.apache.felix.bundlerepository-1.6.6.jar"/>
 	<classpathentry kind="lib" path="/eniware-osgi-target/support/slf4j-api-1.7.24.jar"/>
-	<classpathentry kind="lib" path="/home/eniware/git/org.eniware.build/org.springframework.context.jar"/>
-	<classpathentry kind="lib" path="/home/eniware/git/org.eniware.build/archiva-repository-admin-api-1.4-m4.jar"/>
 	<classpathentry kind="output" path="build/eclipse"/>
 </classpath>
