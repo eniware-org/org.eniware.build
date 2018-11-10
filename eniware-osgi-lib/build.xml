@@ -29,13 +29,13 @@
 	
 	<target name="publish-group" description="Publish all projects from a group">
 		<fileset id="build.files" dir="${basedir}/../..">
-			<include name="eniware-${include.group}/*/build.xml"/>
-			<exclude name="eniware-${include.group}/*.test/build.xml"/>
-			<exclude name="eniware-${include.group}/*.mock/build.xml"/>
+			<include name="org.eniware.${include.group}/*/build.xml"/>
+			<exclude name="org.eniware.${include.group}/*.test/build.xml"/>
+			<exclude name="org.eniware.${include.group}/*.mock/build.xml"/>
 		</fileset>
 		<pathconvert property="build.bundles" pathsep="${line.separator}&#9;">
 			<fileset refid="build.files"/>
-			<mapper type="regexp" from="^.*/(eniware-.*)/build.xml$$" to="\1"/>
+			<mapper type="regexp" from="^.*/(org.eniware..*)/build.xml$$" to="\1"/>
 		</pathconvert>
 		<echo message="Projects to publish:${line.separator}&#9;${build.bundles}"/>
 		<bundle-iterate target="publish"/>

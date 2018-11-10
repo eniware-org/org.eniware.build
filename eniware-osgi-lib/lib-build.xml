@@ -194,7 +194,7 @@
 	<target name="bh.init">
 		<taskdef resource="org/eniwarenetwork/bh/ant/antlib.xml"
 					uri="antlib:org.eniware.bh.ant"
-					classpath="${dir.target}/lib/bh-1.1.jar"/>
+					classpath="/usr/share/ant/lib/ivy.jar"/>
 	</target>
 	
 	<target name="read.manifest" depends="bh.init">
