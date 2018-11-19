@@ -4,16 +4,16 @@
 	for better performance when resolving EniwareNetwork artifact version ranges.
 -->
 <ivysettings>
-	<property name="eniwarenetwork-archive.url" 			value="${eniwarenetwork.archive.url}"/>
-	<property name="eniwarenetwork-archive.pattern" 		value="[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"/>
+	<property name="eniware-archive.url" 			value="${eniware.archive.url}"/>
+	<property name="eniware-archive.pattern" 		value="[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]"/>
 	<property name="ivy.local.default.root"              value="${ivy.default.ivy.user.dir}/local" override="false"/>
 	<property name="ivy.local.default.ivy.pattern"       value="[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]" override="false"/>
 	<property name="ivy.local.default.artifact.pattern"  value="[organisation]/[module]/[revision]/[artifact]-[revision](-[classifier]).[ext]" override="false"/>
 	<settings defaultResolver="default"/>
 	<resolvers default="default">
-		<url name="eniwarenetwork" m2compatible="true">
-			<ivy pattern="${eniwarenetwork-archive.url}/${eniwarenetwork-archive.pattern}"/>
-			<artifact pattern="${eniwarenetwork-archive.url}/${eniwarenetwork-archive.pattern}"/>
+		<url name="eniware" m2compatible="true">
+			<ivy pattern="${eniware-archive.url}/${eniware-archive.pattern}"/>
+			<artifact pattern="${eniware-archive.url}/${eniware-archive.pattern}"/>
 		</url>
 		<filesystem name="local">
 			<ivy pattern="${ivy.local.default.root}/${ivy.local.default.ivy.pattern}" />
@@ -21,7 +21,7 @@
 		</filesystem>
 		<chain name="default" returnFirst="true" checkmodified="true">
 			<resolver ref="local"/>
-			<resolver ref="eniwarenetwork"/>
+			<resolver ref="eniware"/>
 		</chain>
 	</resolvers>
 </ivysettings>

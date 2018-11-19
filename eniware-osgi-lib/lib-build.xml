@@ -192,7 +192,7 @@
 	</target>
 	
 	<target name="bh.init">
-		<taskdef resource="org/eniwarenetwork/bh/ant/antlib.xml"
+		<taskdef resource="org/eniware/bh/ant/antlib.xml"
 					uri="antlib:org.eniware.bh.ant"
 					classpath="/usr/share/ant/lib/ivy.jar"/>
 		
