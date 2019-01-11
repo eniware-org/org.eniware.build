@@ -44,7 +44,7 @@
 		uri="spring-webflow-2.0.xsd"/>
 
 	<system
-		systemId="http://www.springframework.org/schema/webflow-config/spring-webflow-config-2.0.xsd"
+		systemId="http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd"
 		uri="spring-webflow-config-2.0.xsd"/>
 
 	<!-- OSGi -->
