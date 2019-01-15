@@ -176,7 +176,6 @@
 		<dependency org="org.bouncycastle" name="bcpkix-jdk15on" rev="1.47" conf="runtime"/>
 
 		<!-- SN Externals -->
-		<dependency org="org.eniware.external" name="org.eniware.external.moneta" rev="1.1.0" conf="runtime"/>
 		<dependency org="org.eniware.external" name="org.eniware.external.net.sf.packtag" rev="latest.release" conf="runtime"/>
 		<dependency org="org.eniware.external" name="org.eniware.external.org.apache.taglibs.response" rev="1.0.1" conf="runtime"/>
 		<dependency org="org.eniware.external" name="org.eniware.external.org.joda.jsptags" rev="1.1.1" conf="runtime"/>
