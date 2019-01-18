@@ -22,24 +22,6 @@
 		
 		<Engine name="Catalina" defaultHost="localhost">
 			<Host name="localhost" unpackWARs="false" autoDeploy="false" deployOnStartup="false">
-				<!--  For EniwareDRAS support:
-				<Realm className="org.eniware.common.web.catalina.OsgiDataSourceRealm"
-					dataSourceName="(db=central)" 
-					digest="SHA-256"
-					userTable="eniwaredras.dras_user" 
-					userNameCol="username"
-					userCredCol="passwd" 
-					userRoleTable="eniwaredras.dras_auth_roles"
-					roleNameCol="rolename">
-					<CredentialHandler className="org.apache.catalina.realm.SecretKeyCredentialHandler"
-						algorithm="PBKDF2WithHmacSHA256"
-						keyLength="256"
-						iterations="131072"
-						saltLength="64"
-					/>
-				</Realm>
-				<Valve className="org.apache.catalina.authenticator.SingleSignOn"/>
-				-->
 			</Host>
 		</Engine>
 	</Service>
